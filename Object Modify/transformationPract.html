@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Transformation </title>
+    </head>
+
+    <body onload="draw()">
+        <canvas id="canvas" width="800" height="800"></canvas>
+
+
+
+        <script>
+            function draw(){
+                var ctx = document.getElementById('canvas').getContext('2d');
+                var canvas = document.getElementById('canvas');
+                transform();    //default object
+
+                ctx.translate(200,0);  //translate object
+                transform();
+
+                ctx.rotate((Math.PI / 180) * 45);  //rotate object then translate
+                ctx.translate(200,-230);  //translate object
+                transform();
+                
+                
+       
+
+
+                ctx.rotate((Math.PI / 180) * -45); //rotate back
+                ctx.translate(-350,400);  //translate to down-left
+                
+                
+                
+                //scaling three time
+                ctx.scale(1.5,1.5);
+                transform();
+                
+                ctx.scale(1.1,1.1);
+                transform();
+                
+                ctx.scale(0.8,0.8);
+                transform();
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+            function transform(){
+                var ctx = document.getElementById('canvas').getContext('2d');
+
+
+                ctx.fillStyle = '#000';
+                ctx.globalAlpha = 0.5;
+                ctx.fillRect(20, 20, 150, 150);   
+                ctx.save();   
+
+                ctx.fillStyle = '#09F';     
+                ctx.globalAlpha = 0.5;
+                ctx.fillRect(35, 35, 120, 120); 
+                ctx.save(); // Save the current state
+
+                ctx.restore();
+                ctx.fillRect(55, 55, 80, 80);
+
+                ctx.restore();
+                ctx.fillRect(70, 70, 50, 50);
+            }
+
+        </script>
+    </body>
+</html>

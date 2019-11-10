@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Emoje Circle using html canvas  </title>
+        <style>
+            #field{
+                background-color: #fafafa;
+
+                text-align: center;
+
+                margin-left: 30%;
+
+                margin-right: 30%;
+
+                margin-top: 3%;
+                box-shadow:  0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+            
+            }
+            #imoje{
+                
+            }
+
+
+            }
+
+        </style>
+    </head>
+
+    <body onload="draw()">
+        <div id="field">
+            <canvas id="imoje" width="400" height="400"></canvas>
+        </div>
+
+
+
+        <script type="text/javascript">
+            function draw(){
+                var canvas = document.getElementById("imoje");
+                var ctx = canvas.getContext("2d");
+
+                ctx.beginPath();  //outer circle
+                ctx.ellipse(200,200,70,80,0,0,2*Math.PI);
+                ctx.fillStyle="#F6C026";
+                ctx.fill();
+                
+                
+                ctx.beginPath();   //mouth
+                ctx.ellipse(200,200,40,50,0,0.5,0.84*Math.PI);
+                
+                ctx.fillStyle="#fafafa";
+                ctx.fill();
+                
+                
+                ctx.beginPath();  //left eye
+                ctx.ellipse(180,170,9,13,0,0,2*Math.PI);
+               
+                ctx.fillStyle="white";
+                ctx.fill();
+                
+                ctx.beginPath();  //left eye irish
+                ctx.arc(182,165,3,0,2*Math.PI);
+
+                ctx.fillStyle="grey";
+                ctx.fill();
+                
+                
+                
+                
+                ctx.beginPath();  //right eye
+                ctx.ellipse(220,170,9,13,0,0,2*Math.PI);
+                ctx.fillStyle="white";
+                ctx.fill();
+                
+                
+                ctx.beginPath();  //right eye irish
+                ctx.arc(218,165,3,0,2*Math.PI);
+
+                ctx.fillStyle="grey";
+                ctx.fill();
+
+                
+                
+            }
+
+
+        </script>
+
+    </body>
+</html>

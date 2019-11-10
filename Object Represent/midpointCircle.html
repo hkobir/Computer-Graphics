@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Midpoint Circle Algorithm</title>
+
+        <style>
+            #field{
+                background-color: rgba(255, 222, 235,0.3);
+
+                text-align: center;
+
+                margin-left: 10%;
+
+                margin-right: 10%;
+
+                margin-top: 3%;
+                box-shadow:  0 6px 8px 0 rgba(0,0,0,0.16),0 4px 12px 0 rgba(0,0,0,0.12);
+
+            }
+
+            #title{
+                text-align: center;
+                font-size: 25px;
+                font-family: Courier;
+                color: #3d79bf;
+                text-shadow:  2px 2px 4px #000000;
+            }
+
+
+            }
+
+        </style>
+    </head>
+
+
+
+    <body onload="draw()">
+        <div id="field">
+            <br><div id="title">Midpoint Circle Algorithm</div>
+
+            <canvas id="imoje" width="800" height="800"></canvas>
+
+
+        </div>
+
+
+
+
+
+
+        <script> 
+            function draw(){
+                var canvas = document.getElementById("imoje");
+                var ctx = canvas.getContext("2d");
+                ctx.translate(canvas.width/2,canvas.height/2);    //translate grid pixel into middle position
+
+                circle(80);
+
+
+                function setPixel(x,y){
+                    ctx.fillRect(x,y,3,2);
+                    ctx.fillStyle="rgba(246,192,38,0.6)";
+                    ctx.fill();
+                }
+
+
+
+
+
+                function circle(r){
+                    //algorithm are include here 
+                    var x = 0;
+                    var y = r;
+                    var p = 1-r;
+                    while(x<=y){
+                        setPixel(x,y);
+                        setPixel(y,x);
+                        setPixel(-y,x);
+                        setPixel(-x,y);
+                        setPixel(-x,-y);
+                        setPixel(-y,-x);
+                        setPixel(y,-x);
+                        setPixel(x,-y);
+                        if(p<0){
+                            p=p+2*x+3;
+                        }
+                        else{
+                            p=p+2*(x-y)+5;
+                            y--;
+                        }
+                        x++;
+                    }
+
+
+                }
+
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>

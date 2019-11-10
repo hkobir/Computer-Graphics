@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Save and Restore </title>
+    </head>
+
+    <body onload="draw()">
+        <canvas id="canvas" width="350" height="350"></canvas>
+
+        <script type="text/javascript">
+
+
+            function draw() {
+                var ctx = document.getElementById('canvas').getContext('2d');
+
+
+                ctx.fillStyle = '#000';
+                ctx.globalAlpha = 0.5;
+                ctx.fillRect(0, 0, 150, 150);   
+                ctx.save();   
+
+                ctx.fillStyle = '#09F';     
+                ctx.globalAlpha = 0.5;
+                ctx.fillRect(15, 15, 120, 120); 
+                ctx.save(); // Save the current state
+
+                ctx.restore();
+                ctx.fillRect(35, 35, 80, 80);
+
+                ctx.restore();
+                ctx.fillRect(50, 50, 50, 50);
+
+
+
+
+
+
+
+
+
+            }
+        </script>
+    </body>
+</html>

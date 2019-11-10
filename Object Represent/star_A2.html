@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>HTML5 Canvas Tag</title>
+        <style>
+           
+            body{
+
+            text-align: center;
+                margin-top: 15%;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <canvas id="newCanvas" width="300" height="250"></canvas>
+        <script>
+            var canvas = document.getElementById('newCanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "#2E3742";
+            ctx.beginPath();
+            ctx.moveTo(108, 0);
+            ctx.lineTo(141, 70);
+            ctx.lineTo(218, 78.3);
+            ctx.lineTo(162, 131);
+            ctx.lineTo(175, 205);
+            ctx.lineTo(108, 170);
+            ctx.lineTo(41.2, 205);
+            ctx.lineTo(55, 131);
+            ctx.lineTo(1, 78);
+            ctx.lineTo(75, 68);
+            ctx.lineTo(108, 0);
+            ctx.closePath();
+            ctx.fill();
+            
+            
+            //inner shadow
+            ctx.fillStyle = "#B5B5B5";
+            ctx.beginPath();
+            ctx.moveTo(105, 25);
+            ctx.lineTo(105, 160);
+            ctx.lineTo(55, 188);
+            ctx.lineTo(135, 78);
+            ctx.lineTo(200, 83);
+            
+            ctx.lineTo(65, 131);
+            ctx.lineTo(15, 83);
+            ctx.lineTo(155, 131);
+            ctx.lineTo(167, 195);
+            ctx.lineTo(78, 78);
+            
+            ctx.closePath();
+            ctx.fill();
+            
+        </script>
+    </body>
+</html>

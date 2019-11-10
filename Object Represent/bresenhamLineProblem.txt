@@ -1,0 +1,8 @@
+The barebones Bresenham's line algorithm above is designed to draw a line only in one quadrant (Quadrant 1) of the Cartesian coordinate system. But we need to cover all directions. After all, a random line can be plotted from any point on the raster screen to any other point.
+
+This means that in addition to the pseudo code above, we need to take care of two other things:
+
+    Quadrant-Aware Algorithm. The algorithm must adjust iterator parameters, for each of the four quadrants. We can swap line endpoints to make sure that we always draw the line from left to right, and split the algorithm in two main parts (line is pointing either up or down from the starting point.) Or we can branch out in four different cases, for each quadrant respectively and just swap x-axis and y-axis iterators to accommodate for line direction.
+    Axis-Dominance. But even in each of the four quadrants, the line will either be x-axis or y-axis dominant. This means there are actually not four but eight different cases. One for each of the eight octants. Luckily, the algorithm stays exactly the same, all we need to do is switch the iterators and branch out a few times.
+
+That's a lot of branching out. But the algorithm presented in the following example will take care of all possible cases.

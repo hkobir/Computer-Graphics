@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Assignment 3 Smile Emoje </title>
+
+        <style>
+            #field{
+                background-color: rgba(255, 222, 235,0.3);
+
+                text-align: center;
+
+                margin-left: 30%;
+
+                margin-right: 30%;
+
+                margin-top: 3%;
+                box-shadow:  0 6px 8px 0 rgba(0,0,0,0.16),0 4px 12px 0 rgba(0,0,0,0.12);
+
+            }
+
+            #title{
+                text-align: center;
+                font-size: 25px;
+                font-family: Courier;
+                color: #3d79bf;
+                text-shadow:  2px 2px 4px #000000;
+            }
+
+
+            }
+
+        </style>
+    </head>
+
+    
+    
+    <body onload="draw()">
+        <div id="field">
+            <br><div id="title">Let's Smile!</div>
+
+            <canvas id="imoje" width="400" height="400"></canvas>
+
+            
+        </div>
+
+
+
+
+
+
+        <script> 
+            function draw(){
+                var canvas = document.getElementById("imoje");
+                var ctx = canvas.getContext("2d");
+
+                ctx.beginPath();  //OUTER CIRCLE
+                ctx.arc(200,200,80,0,2*Math.PI);
+                ctx.fillStyle = "#FEBC27";
+                ctx.fill();
+
+                ctx.beginPath();   //mouth under leaf
+                ctx.ellipse(200,200,57,60,0,0.3,0.90*Math.PI);
+                ctx.fillStyle="#A66706";
+                ctx.fill();
+
+
+                ctx.beginPath();   //mouth up leaf
+                ctx.ellipse(200,175,90,55,0,0.85,0.75*Math.PI);
+                ctx.fillStyle = "#FEBC27";  //fill up with mouth color
+                ctx.fill();
+
+
+
+                ctx.beginPath();   //teeth line point   
+                ctx.moveTo(155, 227);    
+                ctx.lineTo(170, 232);  
+                ctx.lineTo(190, 235);  
+                ctx.lineTo(210, 235);  
+                ctx.lineTo(230, 232);
+                ctx.lineTo(244, 228); 
+
+                ctx.lineTo(235, 241);  
+                ctx.lineTo(215, 244);  
+                ctx.lineTo(195, 245);  
+                ctx.lineTo(166, 241);  
+                ctx.lineTo(155, 227);  
+                ctx.fillStyle = "#fafafa";
+                ctx.fill(); 
+
+
+
+
+
+
+
+
+                ctx.beginPath();  //left eye
+                ctx.ellipse(175,170,12,23,0,0,2*Math.PI);
+                ctx.fillStyle="#fafafa";
+                ctx.fill();
+
+
+
+                ctx.beginPath();  //left eye irish
+                ctx.arc(177,165,8,0,2*Math.PI);
+                ctx.fillStyle="#515151";
+                ctx.fill();
+
+                ctx.beginPath();  //left eye irish shadow
+                ctx.arc(180,165,2,0,2*Math.PI);
+                ctx.fillStyle="#ffffff";
+                ctx.fill();
+
+
+
+
+
+
+
+                ctx.beginPath();  //right eye
+                ctx.ellipse(220,170,12,23,0,0,2*Math.PI);
+                ctx.fillStyle="#fafafa";
+                ctx.fill();
+
+
+                ctx.beginPath();  //right eye irish
+                ctx.arc(218,165,8,0,2*Math.PI);
+                ctx.fillStyle="#515151";
+                ctx.fill();
+
+
+                ctx.beginPath();  //right eye irish shadow
+                ctx.arc(215,165,2,0,2*Math.PI);
+                ctx.fillStyle="#ffffff";
+                ctx.fill();
+
+
+            }
+
+        </script>
+    </body>
+</html>

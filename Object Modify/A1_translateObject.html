@@ -1,0 +1,143 @@
+<!--https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Transformation of object </title>
+
+        <style>
+            h2,h4{
+
+                font-family: cursive;
+                color: #007ED9;
+            }
+            button{
+                background: #000;
+                color: aliceblue;
+                padding: 5px;
+                border: 0px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body onload="draw()">
+        <h2 style="color: hotpink">Translate of object:</h2>
+
+
+        <h4>Row and Column</h4>
+        <input type="number" placeholder="Row number" id="row"/> 
+        <input type="number" placeholder="Column number" id="column"/>
+
+
+
+        <h4>Color Value(Optional)</h4>
+        <input type="number" placeholder="R: " id="r"/>
+        <input type="number" placeholder="G: " id="g"/>
+        <input type="number" placeholder="B: " id="b"/>
+        <br /><br />
+
+        <button onclick="user()">Calculate</button><br><br>
+
+
+        <h3 style="color: deeppink">Canvas(output)</h3>
+
+        <canvas id="canvas" width="800" height="800" style="background-color: #DEDEDE"></canvas>
+
+
+
+        <script type="text/javascript">
+
+
+            function draw(){
+
+                var canvas = document.getElementById("canvas");
+
+                var ctx = canvas.getContext("2d");
+
+
+
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 3; j++) {
+                        ctx.save();
+                        ctx.fillStyle = 'rgb(' + (51 * i) + ', ' + (255 - 51 * i) + ', 255)';    //change rgb value based on: i value 
+                        ctx.translate(10 + j * 50, 10 + i * 50);
+                        ctx.fillRect(0, 0, 25, 25);
+                        ctx.restore();
+                    }
+                }
+            }
+
+
+
+
+
+
+            //ceate function for user define row,column and color value
+            function user(){
+                var m = document.getElementById("row").value;
+                var n = document.getElementById("column").value;
+                if(m==""||n==""){
+                    alert("please insert row and column number.");
+                }
+                else{
+
+                    m = parseInt(m);
+                    n = parseInt(n);
+
+                    console.log("m: "+m+", n: "+n+"\n");
+
+                    var r = document.getElementById("r").value;
+                    var g = document.getElementById("g").value;
+                    var b = document.getElementById("b").value;
+
+
+
+
+                    var canvas = document.getElementById("canvas");
+                    var ctx = canvas.getContext("2d");
+
+                    if(r==""){
+                        r = "0";
+                    }
+
+
+                    if(g==""){
+                        g = "0";
+                    }
+
+
+                    if(b==""){
+                        b = "0";
+                    }
+
+
+
+                    r = parseInt(r);
+                    g = parseInt(g);
+                    b = parseInt(b);
+
+
+                    for (var i = 0; i < m; i++) {
+                        for (var j = 0; j < n; j++) {
+                            ctx.save();
+                            ctx.fillStyle = 'rgb(' + (r+51 * i) + ', ' + (g - 51 * i) + ','+ b+')';
+                            ctx.translate(10 + j * 50, 10 + i * 50);
+                            ctx.fillRect(0, 0, 25, 25);
+                            ctx.restore();
+                        }
+                    }
+
+
+                }
+                
+                
+
+            }
+
+        </script>
+    </body>
+</html>
