@@ -89,7 +89,7 @@ function  init() {
     //to draw net with 27 rectangle
     function drawNet()  {
 
-        for(let i = 0; i<27;i ++)
+        for(let i = 0; i<27;i ++)       //draw 27 rectangle with specific space
         {
             drawRect(net.x + 15*i, net.y, net.width, net.height, net.color);
 
@@ -99,8 +99,8 @@ function  init() {
     //to draw text points/score of the game
     function drawText(text,x,y)  {
 
-        ctx.fillStyle = "#E48BBA";
-        ctx.font = "30px Sarabun";
+        ctx.fillStyle = "#fff85b";
+        ctx.font = "35px Cute Font";
         ctx.fillText(text, x, y);
     }
 
@@ -113,7 +113,7 @@ function  init() {
         ball.dy=-ball.dy;
     }
 
-    // collision detection
+    // collision detection acording to ball touch to the paddle
     function collision(b,p,dir){
 
         p.top = p.y - dir*p.height;
@@ -289,7 +289,7 @@ function again()
 //levels easy
 function eas() {
     aiLevel = 0.035;    
-    document.getElementById("easy").style.backgroundColor="cyan";
+    document.getElementById("easy").style.backgroundColor="#c1ffc1"; //as active level color
     document.getElementById("hard").style.backgroundColor="#efefef";
     document.getElementById("impossible").style.backgroundColor="#efefef";
     win.play();lose.play();
@@ -299,7 +299,7 @@ function eas() {
 function har() {
     aiLevel = 0.065;
     document.getElementById("easy").style.backgroundColor="#efefef";
-    document.getElementById("hard").style.backgroundColor="cyan";
+    document.getElementById("hard").style.backgroundColor="#c1ffc1";  //as active level color
     document.getElementById("impossible").style.backgroundColor="#efefef";
     win.play();lose.play();
     init();
@@ -310,7 +310,7 @@ function imp() {
     aiLevel = 0.2;
     document.getElementById("easy").style.backgroundColor="#efefef";
     document.getElementById("hard").style.backgroundColor="#efefef";
-    document.getElementById("impossible").style.backgroundColor="cyan";
+    document.getElementById("impossible").style.backgroundColor="#c1ffc1"; //as active level color
 
     win.play();lose.play();
     init();

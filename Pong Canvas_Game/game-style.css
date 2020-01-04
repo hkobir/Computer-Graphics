@@ -7,6 +7,7 @@ body
 
 }
 
+
 body:after
 {     display:none; 
     content: url(https://dl-web.dropbox.com/s/9smc0vzt2oe6jfl/Ping%20Pong%20music%202.mp3?dl=0);
@@ -51,6 +52,7 @@ h3
 {
     display:block ;
     position:relative;
+    color: #F96714;
     font-family: 'Sarabun', sans-serif;  margin:15px; margin-top:25px;
 }
 #easy, #hard , #impossible
@@ -60,12 +62,24 @@ h3
     padding:12px;
     font-family: 'Press Start 2P', cursive;
     background-color:#efefef;
-    border:3px solid #262626;
+    border:3px solid #2A293E;
+    border-radius: 5px;
     font-size:15px;
     text-align:center;
     margin:20px; 
 }
-
+#easy:hover{
+    background-color:#c1ffc1;
+    cursor: pointer;
+}
+#hard:hover{
+    background-color:#c1ffc1;
+    cursor: pointer;
+}
+#impossible:hover{
+    background-color:#c1ffc1;
+    cursor: pointer;
+}
 #status
 {
     font-family: 'Press Start 2P', cursive;
@@ -84,10 +98,10 @@ button
     padding:20px;
     position:relative;
     outline:none;
-    border:3px dashed #262626;
+    border:3px dashed #2A293E;
     border-radius:10px;
-    background-color:green;
-    color:white;
+    background-color:#d8dee9;
+    color:#82c91e;
     font-family: 'Press Start 2P', cursive;
     font-size:18px;
     margin:8px; margin-top:25px;
@@ -96,6 +110,7 @@ button
 button:active {
     transform:scale(0.85);
     box-shadow:0px 0px 0px gray;
+    cursor: pointer;
 }
 
 
