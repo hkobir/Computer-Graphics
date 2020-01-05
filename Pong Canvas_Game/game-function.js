@@ -24,7 +24,7 @@ function  init() {
     //ball object
     const ball = {
 
-        x : w/2 ,
+        x : w/2 ,  //coordinate position of the ball is middle initially
         y : h/2 ,
         r : 10 ,
         speed : 7.5,
@@ -173,7 +173,7 @@ function  init() {
 
 
 
-    //to update everything
+    //to update everything when touch the ball to the paddle and other movement
     function update () {
 
         //to change points
@@ -238,7 +238,7 @@ function  init() {
         //ai paddle
         drawRect(ai.x, ai.y, ai.width, ai.height, ai.color); 
 
-        //points
+        //points/score
         drawText(ai.point,20,h/2-20);
         drawText(user.point,w-35,h/2 +45);  
     }
@@ -261,14 +261,15 @@ function  init() {
         }    
     }  
 
-    function change(txt)
+    function change(txt)   //change score during win/lose
     {
         clearInterval(run);
         ai.point=0; user.point=0;
         music.pause();
         render();
 
-        document.getElementById("result").innerHTML= txt ;   document.getElementById('status').style.visibility='visible'; 
+        document.getElementById("result").innerHTML= txt ;   
+        document.getElementById('status').style.visibility='visible'; 
         document.getElementById('status').style.transform='scale(1)'; 
         document.getElementById('status').style.animation='pop .27s ease' ;     
 
@@ -286,7 +287,7 @@ function again()
 
 }
 
-//levels easy
+//levels easy called when clicked
 function eas() {
     aiLevel = 0.035;    
     document.getElementById("easy").style.backgroundColor="#c1ffc1"; //as active level color
@@ -295,7 +296,7 @@ function eas() {
     win.play();lose.play();
     init();
 }
-//levels hard based on ai level
+//levels hard when clicked based on ai level 
 function har() {
     aiLevel = 0.065;
     document.getElementById("easy").style.backgroundColor="#efefef";
@@ -305,7 +306,7 @@ function har() {
     init();
 
 }
-//levels impossible based on ai level
+//levels impossible level when clicked based on ai 
 function imp() {
     aiLevel = 0.2;
     document.getElementById("easy").style.backgroundColor="#efefef";
